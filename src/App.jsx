@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Band from "./components/Band";
 import Albums from "./components/Albums";
+import Spotify from "./components/Spotify";
 import Error from "./components/Error";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Band" element={<Band />} />
         <Route path="/Albums" element={<Albums />} />
+        <Route path="/Spotify" element={<Spotify />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </>

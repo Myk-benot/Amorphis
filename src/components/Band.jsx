@@ -3,6 +3,7 @@ import React from "react";
 export default function Band() {
   return (
     <section class=" min-h-screen bg-gradient-to-r from-sky-800 to-sky-950 font-mono">
+      <img class="py-8" src="../src/images/Amorphis-Logo-1280x427.png" />
       <div class="py-8 grid grid-cols-3">
         <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
         <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
@@ -15,7 +16,7 @@ export default function Band() {
         <ul class=" mx-auto text-xl p-4 text-yellow-50 leading-8">
           <li>
             <a
-              class="hover:text-slate-900"
+              class="hover:text-slate-900 hover:font-bold"
               href="https://en.wikipedia.org/wiki/Esa_Holopainen"
               target="_blank"
             >
@@ -24,7 +25,7 @@ export default function Band() {
           </li>
           <li>
             <a
-              class="hover:text-slate-900"
+              class="hover:text-slate-900 hover:font-bold"
               href="https://en.wikipedia.org/wiki/Tomi_Koivusaari"
               target="_blank"
             >
@@ -38,7 +39,7 @@ export default function Band() {
           </li>
           <li>
             <a
-              class="hover:text-slate-900"
+              class="hover:text-slate-900 hover:font-bold"
               href="https://en.wikipedia.org/wiki/Olli-Pekka_Laine"
               target="_blank"
             >
@@ -49,7 +50,7 @@ export default function Band() {
           <li>Santeri Kallio – keyboards (1998–present)</li>
           <li>
             <a
-              class="hover:text-slate-900"
+              class="hover:text-slate-900 hover:font-bold"
               href="https://en.wikipedia.org/wiki/Tomi_Joutsen"
               target="_blank"
             >
