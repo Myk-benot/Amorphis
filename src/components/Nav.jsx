@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
@@ -7,19 +8,19 @@ export default function Nav() {
         <h3 class=" text-yellow-50 text-xl font-bold">Amorphis</h3>
         <ul class="flex gap-6">
           <li>
-            <a class="text-yellow-50" href="Home">
+            <Link to="/" class="text-yellow-50">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a class="text-yellow-50" href="band">
+            <Link to="/Band" class="text-yellow-50">
               Band
-            </a>
+            </Link>
           </li>
           <li>
-            <a class="text-yellow-50" href="albums">
+            <Link to="/Albums" class="text-yellow-50">
               Albums
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
