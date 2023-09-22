@@ -3,7 +3,10 @@ import React from "react";
 export default function Band() {
   return (
     <section class=" min-h-screen bg-gradient-to-r from-sky-800 to-sky-950 font-mono">
-      <img class="py-8" src="../src/images/Amorphis-Logo-1280x427.png" />
+      <img
+        class="py-8 mx-auto"
+        src="../src/images/Amorphis-Logo-1280x427.png"
+      />
       <div class="py-8 grid grid-cols-3">
         <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
         <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
