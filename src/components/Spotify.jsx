@@ -82,18 +82,19 @@ export default function Spotify() {
     ));
   };
   return (
-    <div class=" text-yellow-50 py-16 bg-gradient-to-r from-sky-800 to-sky-950 ">
-      <h1 class="text-center">Amorphis Songs</h1>
+    <div class=" text-yellow-50 py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
+      <h1 class="text-center pb-6">Amorphis Songs</h1>
       {!token ? (
         <a
+          class="font-bold text-2xl border p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
           href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
         >
           Login to Spotify
         </a>
       ) : (
-        <h2 class="text-center">Welcome to Amorphis Songs</h2>
+        <h2>Welcome to Amorphis Songs</h2>
       )}
-      <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 ">
+      <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 bg-gradient-to-r from-sky-800 to-sky-950">
         {songs.length > 0 && renderSongs()}
       </div>
     </div>

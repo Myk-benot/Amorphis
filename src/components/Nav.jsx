@@ -11,7 +11,7 @@ export default function Nav() {
           <li>
             <Link
               to="/"
-              class="text-yellow-50 border p-2 rounded-md hover:border-slate-900 hover:font-bold"
+              class="text-yellow-50 border p-2 rounded-md hover:border-yellow-800 hover:font-bold"
             >
               Home
             </Link>
@@ -19,7 +19,7 @@ export default function Nav() {
           <li>
             <Link
               to="/Band"
-              class="text-yellow-50 border p-2 rounded-md hover:border-slate-900 hover:font-bold"
+              class="text-yellow-50 border p-2 rounded-md hover:border-yellow-800 hover:font-bold"
             >
               Band
             </Link>
@@ -27,7 +27,7 @@ export default function Nav() {
           <li>
             <Link
               to="/Albums"
-              class="text-yellow-50 border p-2 rounded-md hover:border-slate-900 hover:font-bold"
+              class="text-yellow-50 border p-2 rounded-md hover:border-yellow-800 hover:font-bold"
             >
               Albums
             </Link>
@@ -35,7 +35,7 @@ export default function Nav() {
           <li>
             <Link
               to="/Spotify"
-              class="text-yellow-50 border p-2 rounded-md hover:border-slate-900 hover:font-bold"
+              class="text-yellow-50 border p-2 rounded-md hover:border-yellow-800 hover:font-bold"
             >
               Spotify
             </Link>
