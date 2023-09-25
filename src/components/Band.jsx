@@ -13,7 +13,7 @@ export default function Band() {
       <section className=" min-h-screen bg-gradient-to-r from-sky-800 to-sky-950 font-mono text-vegasgold">
         <img
           className="py-8 mx-auto"
-          src="../src/images/Amorphis-Logo-1280x427.png"
+          src="../src/images/amorphis-logo.png"
         />
         <div className="py-8 grid grid-cols-3">
           <img

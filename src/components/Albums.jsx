@@ -12,10 +12,10 @@ export default function Albums() {
     >
       <div className="text-vegasgold font-mono bg-bg-amorphis h-full  bg-gradient-to-r from-sky-800 to-sky-950 mx-auto">
         <img
-          src="../src/images/Amorphis_logo.png"
+          src="../src/images/amorphis-logo.png"
           alt="amorphis"
           className="mx-auto pt-16"
-        ></img>
+        />
         <h1 className="text-center py-16 text-2xl">Albums</h1>
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-fit mx-auto py-8 text-lg leading-10">
           <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
