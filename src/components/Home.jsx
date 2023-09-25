@@ -57,7 +57,7 @@ export default function Home() {
         <div className="py-16 ">
           <img
             className="mx-auto shadow-2xl rounded-lg px-2"
-            src="../src/images/amorphis_header.jpg"
+            src="../src/images/amorphis-header.jpg"
             alt="amorphis"
           />
         </div>
