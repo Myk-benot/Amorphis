@@ -37,7 +37,7 @@ export default function Home() {
         <div className="py-16 md:flex  md:items-center md:justify-center">
           <div className="w-1/2 mx-auto">
             <img
-              class="w-96 mx-auto"
+              className="w-96 mx-auto"
               src="../src/images/amorphis-queen-of-time.png"
               alt="amorphis"
             />

@@ -137,7 +137,7 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Eclipse_(Amorphis_album)"
                 target="_blank"
-                clasName="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
