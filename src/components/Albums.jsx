@@ -12,7 +12,7 @@ export default function Albums() {
     >
       <div className="text-vegasgold font-mono bg-bg-amorphis h-full  bg-gradient-to-r from-sky-800 to-sky-950 mx-auto">
         <img
-          src="../src/images/amorphis-logo.png"
+          src="./src/images/amorphis-logo.png"
           alt="amorphis"
           className="mx-auto pt-16"
         />

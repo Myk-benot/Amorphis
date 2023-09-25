@@ -24,7 +24,7 @@ export default function Home() {
             className="mb-8 md:w-1/2 lg:w-1/2"
             src="../src/images/amorphis-icon.png"
             alt="amorphis"
-          ></img>
+          />
           <p className=" w-3/4 md:w-1/2 px-4 mx-auto text-vegasgold">
             Amorphis is a Finnish heavy metal band founded by Jan Rechberger,
             Tomi Koivusaari, and Esa Holopainen in 1990. Initially, the band was
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="py-16 ">
           <img
             className="mx-auto shadow-2xl rounded-lg px-2"
-            src="../src/images/amorphis-header.jpg"
+            src="./src/images/amorphis-header.jpg"
             alt="amorphis"
           />
         </div>
