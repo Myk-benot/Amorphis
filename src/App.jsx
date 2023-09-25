@@ -5,19 +5,22 @@ import Home from "./components/Home";
 import Band from "./components/Band";
 import Albums from "./components/Albums";
 import Spotify from "./components/Spotify";
-import Error from "./components/Error";
+import ErrorPage from "./components/Error";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
     <>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Band" element={<Band />} />
-        <Route path="/Albums" element={<Albums />} />
-        <Route path="/Spotify" element={<Spotify />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <AnimatePresence>
+        <Nav key="nav" />
+        <Routes>
+          <Route key="home" path="/" element={<Home />} />
+          <Route key="band" path="/Band" element={<Band />} />
+          <Route key="albums" path="/Albums" element={<Albums />} />
+          <Route key="spotify" path="/Spotify" element={<Spotify />} />
+          <Route key="error" path="*" element={<ErrorPage />} />
+        </Routes>
+      </AnimatePresence>
     </>
   );
 }

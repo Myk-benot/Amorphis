@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 const CLIENT_ID = import.meta.env.VITE_REACT_APP_SPOTIFY_CLIENT_ID;
 const REDIRECT_URI = import.meta.env.VITE_REACT_APP_SPOTIFY_REDIRECT_URI;
 const AUTH_ENDPOINT = import.meta.env.VITE_REACT_APP_SPOTIFY_AUTH_ENDPOINT;
 const RESPONSE_TYPE = import.meta.env.VITE_REACT_APP_SPOTIFY_RESPONSE_TYPE;
-
-console.log("CLIENT_ID:", CLIENT_ID);
-console.log("REDIRECT_URI:", REDIRECT_URI);
-console.log("AUTH_ENDPOINT:", AUTH_ENDPOINT);
-console.log("RESPONSE_TYPE:", RESPONSE_TYPE);
 
 export default function Spotify() {
   const [token, setToken] = useState("");
@@ -82,21 +78,28 @@ export default function Spotify() {
     ));
   };
   return (
-    <div class=" text-yellow-50 py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
-      <h1 class="text-center pb-6">Amorphis Songs</h1>
-      {!token ? (
-        <a
-          class="font-bold text-2xl border p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
-          href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
-        >
-          Login to Spotify
-        </a>
-      ) : (
-        <h2>Welcome to Amorphis Songs</h2>
-      )}
-      <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 bg-gradient-to-r from-sky-800 to-sky-950">
-        {songs.length > 0 && renderSongs()}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
+    >
+      <div class=" text-vegasgold py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
+        <h1 class="text-center pb-6">Amorphis Songs</h1>
+        {!token ? (
+          <a
+            class="font-bold text-2xl border border-vegasgold p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
+            href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+          >
+            Login to Spotify
+          </a>
+        ) : (
+          <h2>Welcome to Amorphis Songs</h2>
+        )}
+        <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 bg-gradient-to-r from-sky-800 to-sky-950">
+          {songs.length > 0 && renderSongs()}
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

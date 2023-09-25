@@ -4,14 +4,14 @@ import { GiCompass } from "react-icons/gi";
 
 export default function Nav() {
   return (
-    <div class=" w-full bg-gradient-to-r from-sky-800 to-sky-950  py-4 drop-shadow-2xl font-mono">
+    <div className=" w-full bg-gradient-to-r from-sky-800 to-sky-950  py-4  font-mono text-vegasgold drop-shadow-xl ">
       <div class="container flex align-center justify-around">
-        <GiCompass class="text-3xl text-yellow-50" />
+        <GiCompass class="text-3xl text-vegasgold" />
         <ul class="flex gap-6">
           <li>
             <Link
               to="/"
-              class="text-yellow-50 border p-2 rounded-md hover:border-yellow-800 hover:font-bold"
+              class="border border-vegasgold p-2 rounded-md hover:border-yellow-800 hover:font-bold hover:border-b-2"
             >
               Home
             </Link>
@@ -19,7 +19,7 @@ export default function Nav() {
           <li>
             <Link
               to="/Band"
-              class="text-yellow-50 border p-2 rounded-md hover:border-yellow-800 hover:font-bold"
+              class="border border-vegasgold p-2 rounded-md hover:border-yellow-800 hover:font-bold"
             >
               Band
             </Link>
@@ -27,7 +27,7 @@ export default function Nav() {
           <li>
             <Link
               to="/Albums"
-              class="text-yellow-50 border p-2 rounded-md hover:border-yellow-800 hover:font-bold"
+              class="border border-vegasgold p-2 rounded-md hover:border-yellow-800 hover:font-bold"
             >
               Albums
             </Link>
@@ -35,7 +35,7 @@ export default function Nav() {
           <li>
             <Link
               to="/Spotify"
-              class="text-yellow-50 border p-2 rounded-md hover:border-yellow-800 hover:font-bold"
+              class="border border-vegasgold p-2 rounded-md hover:border-yellow-800 hover:font-bold"
             >
               Spotify
             </Link>

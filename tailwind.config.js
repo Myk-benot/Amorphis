@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        goldrod: "rgb(238,232,170)",
+        vegasgold: "rgb(197,179,88)",
+      },
+    },
   },
 
   plugins: [],
