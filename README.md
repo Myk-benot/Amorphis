@@ -9,3 +9,4 @@ Currently, two official plugins are available:
 # Amorphis
 # Amorphis
 # amorphis-blog
+# amorphis-blog
