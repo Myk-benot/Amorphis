@@ -50,10 +50,14 @@ export default function Spotify() {
   const renderSongs = () => {
     return songs.map((song) => (
       <div
-        class="bg-gradient-to-r from-sky-800 to-sky-950 font-mono p-2 shadow shadow-yellow-50 rounded-lg mx-auto leading-8"
+        className="bg-gradient-to-r from-sky-800 to-sky-950 font-mono p-2 shadow shadow-yellow-50 rounded-lg mx-auto leading-8"
         key={song.id}
       >
-        <img class="rounded" src={song.album.images[0].url} alt="Album Cover" />
+        <img
+          className="rounded"
+          src={song.album.images[0].url}
+          alt="Album Cover"
+        />
         <p>
           <strong>Song Name:</strong> {song.name}
         </p>
@@ -83,12 +87,13 @@ export default function Spotify() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.5 }}
+      className="motion"
     >
-      <div class=" text-vegasgold py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
-        <h1 class="text-center pb-6">Amorphis Songs</h1>
+      <div className=" text-vegasgold py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
+        <h1 className="text-center pb-6">Amorphis Songs</h1>
         {!token ? (
           <a
-            class="font-bold text-2xl border border-vegasgold p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
+            className="font-bold text-2xl border border-vegasgold p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
             href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
           >
             Login to Spotify
@@ -96,7 +101,7 @@ export default function Spotify() {
         ) : (
           <h2>Welcome to Amorphis Songs</h2>
         )}
-        <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 bg-gradient-to-r from-sky-800 to-sky-950">
+        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 bg-gradient-to-r from-sky-800 to-sky-950">
           {songs.length > 0 && renderSongs()}
         </div>
       </div>

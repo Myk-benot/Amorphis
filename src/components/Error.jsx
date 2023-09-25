@@ -8,11 +8,12 @@ export default function ErrorPage() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.5 }}
+      className="motion"
     >
-      <div class="text-vegasgold text-center pt-16 h-screen bg-gradient-to-r from-sky-800 to-sky-950 leading-8">
+      <div className="text-vegasgold text-center pt-16 h-screen bg-gradient-to-r from-sky-800 to-sky-950 leading-8">
         <h1>Oops!</h1>
         <p>Sorry, an unexpected error has occurred.</p>
-        <a href="/" class=" border border-vegasgold p-2 hover:font-bold">
+        <a href="/" className=" border border-vegasgold p-2 hover:font-bold">
           Go to the home page
         </a>
       </div>

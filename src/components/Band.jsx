@@ -8,23 +8,33 @@ export default function Band() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.5 }}
+      className="motion"
     >
-      <section class=" min-h-screen bg-gradient-to-r from-sky-800 to-sky-950 font-mono text-vegasgold">
+      <section className=" min-h-screen bg-gradient-to-r from-sky-800 to-sky-950 font-mono text-vegasgold">
         <img
-          class="py-8 mx-auto"
+          className="py-8 mx-auto"
           src="../src/images/Amorphis-Logo-1280x427.png"
         />
-        <div class="py-8 grid grid-cols-3">
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
+        <div className="py-8 grid grid-cols-3">
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
         </div>
-        <h3 class="p-8 text-center text-2xl font-bold">Present Members:</h3>
-        <div class="flex py-12">
-          <ul class=" mx-auto text-xl p-4 leading-8">
+        <h3 className="p-8 text-center text-2xl font-bold">Present Members:</h3>
+        <div className="flex py-12">
+          <ul className=" mx-auto text-xl p-4 leading-8">
             <li>
               <a
-                class="hover:text-slate-900 hover:font-bold"
+                className="hover:text-slate-900 hover:font-bold"
                 href="https://en.wikipedia.org/wiki/Esa_Holopainen"
                 target="_blank"
               >
@@ -33,7 +43,7 @@ export default function Band() {
             </li>
             <li>
               <a
-                class="hover:text-slate-900 hover:font-bold"
+                className="hover:text-slate-900 hover:font-bold"
                 href="https://en.wikipedia.org/wiki/Tomi_Koivusaari"
                 target="_blank"
               >
@@ -47,7 +57,7 @@ export default function Band() {
             </li>
             <li>
               <a
-                class="hover:text-slate-900 hover:font-bold"
+                className="hover:text-slate-900 hover:font-bold"
                 href="https://en.wikipedia.org/wiki/Olli-Pekka_Laine"
                 target="_blank"
               >
@@ -58,7 +68,7 @@ export default function Band() {
             <li>Santeri Kallio – keyboards (1998–present)</li>
             <li>
               <a
-                class="hover:text-slate-900 hover:font-bold"
+                className="hover:text-slate-900 hover:font-bold"
                 href="https://en.wikipedia.org/wiki/Tomi_Joutsen"
                 target="_blank"
               >
@@ -67,14 +77,23 @@ export default function Band() {
             </li>
           </ul>
         </div>
-        <div class="py-8 grid grid-cols-3">
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
+        <div className="py-8 grid grid-cols-3">
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
         </div>
-        <h3 class="p-8 text-center  text-2xl font-bold">Past Members:</h3>
-        <div class="flex py-12">
-          <ul class=" mx-auto text-xl p-4  leading-8">
+        <h3 className="p-8 text-center  text-2xl font-bold">Past Members:</h3>
+        <div className="flex py-12">
+          <ul className=" mx-auto text-xl p-4  leading-8">
             <li>Niclas Etelävuori (2000–2017)</li>
             <li>Pekka Kasari (1996–2002)</li>
             <li>Kasper Mårtenson (1993–1996)</li>
@@ -88,10 +107,19 @@ export default function Band() {
             <li>Sakari Kukko – live session saxophone and flute (2012–2014)</li>
           </ul>
         </div>
-        <div class="py-8 grid grid-cols-3">
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
-          <img class=" w-96 mx-auto p-4" src="../src/images/trans-anchor.png" />
+        <div className="py-8 grid grid-cols-3">
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
+          <img
+            className=" w-96 mx-auto p-4"
+            src="../src/images/trans-anchor.png"
+          />
         </div>
       </section>
     </motion.div>

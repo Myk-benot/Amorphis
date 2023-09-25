@@ -16,15 +16,16 @@ export default function Home() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.5 }}
+      className="motion"
     >
-      <section class=" h-full bg-gradient-to-r from-sky-800 to-sky-950 font-mono text-lg">
-        <div class="py-16 md:flex md:items-center md: justify-center ">
+      <section className=" h-full bg-gradient-to-r from-sky-800 to-sky-950 font-mono text-lg">
+        <div className="py-16 md:flex md:items-center md: justify-center ">
           <img
-            class="mb-8 md:w-1/2 lg:w-1/2"
+            className="mb-8 md:w-1/2 lg:w-1/2"
             src="../src/images/amorphis-icon.png"
             alt="amorphis"
           />
-          <p class=" w-3/4 md:w-1/2 px-4 mx-auto text-vegasgold">
+          <p className=" w-3/4 md:w-1/2 px-4 mx-auto text-vegasgold">
             Amorphis is a Finnish heavy metal band founded by Jan Rechberger,
             Tomi Koivusaari, and Esa Holopainen in 1990. Initially, the band was
             a death metal act, but on later albums they evolved into playing
@@ -33,15 +34,15 @@ export default function Home() {
             for their lyrics
           </p>
         </div>
-        <div class="py-16 md:flex  md:items-center md:justify-center">
-          <div class="w-1/2 mx-auto">
+        <div className="py-16 md:flex  md:items-center md:justify-center">
+          <div className="w-1/2 mx-auto">
             <img
               class="w-96 mx-auto"
               src="../src/images/amorphis-queen-of-time.png"
               alt="amorphis"
             />
           </div>
-          <p class=" w-3/4 md:w-1/2 px-4 mx-auto my-8 text-vegasgold">
+          <p className=" w-3/4 md:w-1/2 px-4 mx-auto my-8 text-vegasgold">
             The band, hailing from Helsinki, Finland, has established itself as
             a versatile force in the realm of metal music since their formation
             in 1990. Their sound is a unique fusion of progressive metal,
@@ -53,34 +54,34 @@ export default function Home() {
             and influence in the metal scene.
           </p>
         </div>
-        <div class="py-16 ">
+        <div className="py-16 ">
           <img
-            class="mx-auto shadow-2xl rounded-lg px-2"
+            className="mx-auto shadow-2xl rounded-lg px-2"
             src="../src/images/20220209_amorphis_header.jpg"
             alt="amorphis"
           />
         </div>
-        <div class=" text-5xl grid grid-cols-3 justify-items-center lg:grid-cols-6 gap-4 py-16 text-vegasgold">
+        <div className=" text-5xl grid grid-cols-3 justify-items-center lg:grid-cols-6 gap-4 py-16 text-vegasgold">
           <a href="https://amorphis.net/" target="_blank">
-            <SiGooglehome class="hover:text-goldrod" />
+            <SiGooglehome className="hover:text-goldrod" />
           </a>
           <a href="https://www.facebook.com/amorphis" target="_blank">
-            <SiFacebook class="hover:text-goldrod" />
+            <SiFacebook className="hover:text-goldrod" />
           </a>
           <a href="https://www.instagram.com/amorphisband/" target="_blank">
-            <SiInstagram class="hover:text-goldrod" />
+            <SiInstagram className="hover:text-goldrod" />
           </a>
           <a href="https://en.wikipedia.org/wiki/Amorphis" target="_blank">
-            <SiWikipedia class="hover:text-goldrod" />
+            <SiWikipedia className="hover:text-goldrod" />
           </a>
           <a
             href="https://open.spotify.com/artist/2UOVgpgiNTC6KK0vSC77aD"
             target="_blank"
           >
-            <SiSpotify class="hover:text-goldrod" />
+            <SiSpotify className="hover:text-goldrod" />
           </a>
           <a href="https://twitter.com/amorphis" target="_blank">
-            <SiTwitter class="hover:text-goldrod" />
+            <SiTwitter className="hover:text-goldrod" />
           </a>
         </div>
       </section>

@@ -8,16 +8,17 @@ export default function Albums() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.5 }}
+      className="motion"
     >
-      <div class="text-vegasgold font-mono bg-bg-amorphis h-full  bg-gradient-to-r from-sky-800 to-sky-950 mx-auto">
+      <div className="text-vegasgold font-mono bg-bg-amorphis h-full  bg-gradient-to-r from-sky-800 to-sky-950 mx-auto">
         <img
           src="../src/images/Amorphis_logo.png"
           alt="amorphis"
-          class="mx-auto pt-16"
+          className="mx-auto pt-16"
         ></img>
-        <h1 class="text-center py-16 text-2xl">Albums</h1>
-        <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-fit mx-auto py-8 text-lg leading-10">
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+        <h1 className="text-center py-16 text-2xl">Albums</h1>
+        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-fit mx-auto py-8 text-lg leading-10">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               The Karelian Isthmus
               <br />
@@ -28,14 +29,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/The_Karelian_Isthmus"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Tales from the Thousand Lakes
               <br />
@@ -46,14 +47,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Tales_from_the_Thousand_Lakes"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Elegy
               <br />
@@ -64,14 +65,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Elegy_(Amorphis_album)"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Tuonela
               <br />
@@ -82,14 +83,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Tuonela_(album)"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Am Universum
               <br />
@@ -100,14 +101,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Am_Universum"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Far from the Sun
               <br />
@@ -118,14 +119,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Far_from_the_Sun"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Eclipse
               <br />
@@ -136,14 +137,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Eclipse_(Amorphis_album)"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                clasName="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Silent Waters
               <br />
@@ -154,14 +155,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Silent_Waters_(Amorphis_album)"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Skyforger
               <br />
@@ -172,14 +173,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Skyforger_(album)"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               The Beginning of Times
               <br />
@@ -190,14 +191,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/The_Beginning_of_Times"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Circle
               <br />
@@ -208,14 +209,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Circle_(Amorphis_album)"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Under the Red Cloud
               <br />
@@ -226,14 +227,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Under_the_Red_Cloud"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Queen of Time
               <br />
@@ -244,14 +245,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Queen_of_Time"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Halo
               <br />
@@ -262,14 +263,14 @@ export default function Albums() {
               <a
                 href="https://en.wikipedia.org/wiki/Halo_(Amorphis_album)"
                 target="_blank"
-                class="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
+                className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
               >
                 More Info
               </a>
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Privilege of Evil
               <br />
@@ -280,7 +281,7 @@ export default function Albums() {
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               Black Winter Day
               <br />
@@ -291,7 +292,7 @@ export default function Albums() {
             </p>
           </div>
 
-          <div class="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
+          <div className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod">
             <p>
               My Kantele
               <br />
