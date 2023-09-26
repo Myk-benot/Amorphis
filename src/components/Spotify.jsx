@@ -12,6 +12,9 @@ export default function Spotify() {
   const [songs, setSongs] = useState([]);
   const scopes = 'user-read-playback-state'
 
+  
+  
+
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -26,6 +29,7 @@ export default function Spotify() {
       window.location.hash = "";
       window.localStorage.setItem("token", token);
     }
+   
 
     setToken(token);
 
@@ -45,6 +49,8 @@ export default function Spotify() {
 
     if (token) {
       searchAmorphisSongs();
+    }else {
+      window.location.href = `{${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(scopes)}}`
     }
   }, [token]);
 
