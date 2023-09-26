@@ -72,7 +72,7 @@ export default function Spotify() {
           <strong>Popularity:</strong> {song.popularity}
         </p>
         {song.preview_url && (
-          <audio controls>
+          <audio controls className="mx-auto py-2">
             <source src={song.preview_url} type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
