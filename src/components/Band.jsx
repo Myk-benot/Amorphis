@@ -13,20 +13,20 @@ export default function Band() {
       <section className=" min-h-screen bg-gradient-to-r from-sky-800 to-sky-950 font-mono text-vegasgold">
         <img
           className="py-8 mx-auto"
-          src="./src/assets/amorphis-logo2.png"
+          src="/amorphis-logo2.png"
         />
         <div className="py-8 grid grid-cols-3">
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
         </div>
         <h3 className="p-8 text-center text-2xl font-bold">Present Members:</h3>
@@ -80,15 +80,15 @@ export default function Band() {
         <div className="py-8 grid grid-cols-3">
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
         </div>
         <h3 className="p-8 text-center  text-2xl font-bold">Past Members:</h3>
@@ -110,15 +110,15 @@ export default function Band() {
         <div className="py-8 grid grid-cols-3">
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
           <img
             className=" w-96 mx-auto p-4"
-            src="./src/assets/trans-anchor.png"
+            src="/trans-anchor.png"
           />
         </div>
       </section>
