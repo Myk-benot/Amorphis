@@ -10,10 +10,19 @@ const RESPONSE_TYPE = import.meta.env.VITE_REACT_APP_SPOTIFY_RESPONSE_TYPE;
 export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
+  const isTokenExpired = true; 
+
+  useEffect(() => {
+    if (isTokenExpired) {
+      window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`;
+    }
+  }, [isTokenExpired]);
+
 
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
+
 
     if (!token && hash) {
       token = hash
@@ -27,6 +36,8 @@ export default function Spotify() {
     }
 
     setToken(token);
+
+   
 
     const searchAmorphisSongs = async () => {
       const { data } = await axios.get("https://api.spotify.com/v1/search", {
