@@ -11,10 +11,7 @@ export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    <iframe style={{display: 'none'}} src="https://spotify.com/logout"></iframe>
-  };
+ 
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -105,8 +102,9 @@ export default function Spotify() {
           </a>
         ) : (
           <>
+           <a href="https://www.spotify.com/logout/">Log Out</a>
           <h2>Welcome to Amorphis Songs</h2>
-          <button onclick={logout}>Log Out</button>
+         
           </>
         )}
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 bg-gradient-to-r from-sky-800 to-sky-950">
