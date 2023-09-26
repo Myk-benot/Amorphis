@@ -11,7 +11,6 @@ export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
 
-
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -26,7 +25,7 @@ export default function Spotify() {
       window.location.hash = "";
       window.localStorage.setItem("token", token);
     }
-   
+
     setToken(token);
 
     const searchAmorphisSongs = async () => {
@@ -75,6 +74,7 @@ export default function Spotify() {
         {song.preview_url && (
           <audio controls className="mx-auto py-2">
             <source src={song.preview_url} type="audio/mpeg" />
+            Your browser does not support the audio element.
           </audio>
         )}
         <hr />
