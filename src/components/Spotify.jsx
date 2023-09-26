@@ -13,6 +13,7 @@ export default function Spotify() {
 
   const logout = () => {
     localStorage.removeItem("token");
+    <iframe style={{display: 'none'}} src="https://spotify.com/logout"></iframe>
   };
 
   useEffect(() => {
