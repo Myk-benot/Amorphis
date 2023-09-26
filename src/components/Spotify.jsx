@@ -10,6 +10,7 @@ const RESPONSE_TYPE = import.meta.env.VITE_REACT_APP_SPOTIFY_RESPONSE_TYPE;
 export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
+  const tokenisExpired = true
 
  
 
@@ -93,7 +94,7 @@ export default function Spotify() {
     >
       <div className=" text-vegasgold py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
         <h1 className="text-center pb-6">Amorphis Songs</h1>
-        {!token ? (
+        {!token || tokenisExpired ? (
           <a
             className="font-bold text-2xl border border-vegasgold p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
             href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
