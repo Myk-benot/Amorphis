@@ -101,11 +101,7 @@ export default function Spotify() {
             Login to Spotify
           </a>
         ) : (
-          <>
-           <a href="https://www.spotify.com/logout/">Log Out</a>
           <h2>Welcome to Amorphis Songs</h2>
-         
-          </>
         )}
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 bg-gradient-to-r from-sky-800 to-sky-950">
           {songs.length > 0 && renderSongs()}
