@@ -11,13 +11,9 @@ export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
 
-
-
-
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
-
 
     if (!token && hash) {
       token = hash
@@ -31,8 +27,6 @@ export default function Spotify() {
     }
 
     setToken(token);
-
-   
 
     const searchAmorphisSongs = async () => {
       const { data } = await axios.get("https://api.spotify.com/v1/search", {
