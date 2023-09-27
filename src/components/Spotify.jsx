@@ -15,23 +15,7 @@ export default function Spotify() {
   const AUTH_SCOPES = 'user-modify-playback-state streaming user-read-email user-read-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state';
 
   useEffect(() => {
-    const hash = window.location.hash;
-    let accessToken = window.localStorage.getItem("token");
-
-    if (!accessToken && hash) {
-      const hashParams = new URLSearchParams(hash.substring(1));
-      accessToken = hashParams.get("access_token");
-
-      window.location.hash = "";
-
-      if (accessToken) {
-        window.localStorage.setItem("token", accessToken);
-      }
-    }
-
-    setToken(accessToken);
-
-    const searchAmorphisSongs = async () => {
+    const searchAmorphisSongs = async (accessToken) => {
       try {
         const { data } = await axios.get("https://api.spotify.com/v1/search", {
           headers: {
@@ -55,10 +39,26 @@ export default function Spotify() {
       }
     };
 
-    if (accessToken && !token) {
-      searchAmorphisSongs();
+    const hash = window.location.hash;
+    let accessToken = window.localStorage.getItem("token");
+
+    if (!accessToken && hash) {
+      const hashParams = new URLSearchParams(hash.substring(1));
+      accessToken = hashParams.get("access_token");
+
+      window.location.hash = "";
+
+      if (accessToken) {
+        window.localStorage.setItem("token", accessToken);
+      }
     }
-  }, [token, accessToken]);  
+
+    setToken(accessToken);
+
+    if (accessToken && !token) {
+      searchAmorphisSongs(accessToken);
+    }
+  }, [token]);  
 
   return (
     <motion.div
