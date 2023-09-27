@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import Songlist from "./Songs"
 
 const CLIENT_ID = import.meta.env.VITE_REACT_APP_SPOTIFY_CLIENT_ID;
 const REDIRECT_URI = import.meta.env.VITE_REACT_APP_SPOTIFY_REDIRECT_URI;
@@ -10,39 +11,67 @@ const RESPONSE_TYPE = import.meta.env.VITE_REACT_APP_SPOTIFY_RESPONSE_TYPE;
 export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
-  const tokenisExpired = true
+  const AUTH_SCOPES = 'playlist-read-private';
+ 
 
  
 
   useEffect(() => {
     const hash = window.location.hash;
-    let token = window.localStorage.getItem("token");
+    let accessToken = window.localStorage.getItem("token");
 
-    if (!token && hash) {
-      token = hash
+    if (!accessToken && hash) {
+      accessToken = hash
         .substring(1)
         .split("&")
         .find((elem) => elem.startsWith("access_token"))
         .split("=")[1];
 
       window.location.hash = "";
-      window.localStorage.setItem("token", token);
+      window.localStorage.setItem("token", accessToken);
     }
 
-    setToken(token);
+    setToken(accessToken);
+
+    const refreshAccessToken = async () => {
+      const refreshToken = window.localStorage.getItem("refresh_token");
+
+      if (!refreshToken) {
+        console.error("No refresh token available.");
+        return;
+      }
+
+      try {
+        const response = await axios.get(`/refresh_token?refresh_token=${refreshToken}`);
+        const newAccessToken = response.data.access_token;
+        window.localStorage.setItem("token", newAccessToken);
+        setToken(newAccessToken);
+      } catch (error) {
+        console.error("Error refreshing access token:", error);
+      }
+    };
 
     const searchAmorphisSongs = async () => {
-      const { data } = await axios.get("https://api.spotify.com/v1/search", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        params: {
-          q: "Amorphis",
-          type: "track",
-        },
-      });
+      try {
+        const { data } = await axios.get("https://api.spotify.com/v1/search", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: {
+            q: "Amorphis",
+            type: "track",
+          },
+        });
 
-      setSongs(data.tracks.items);
+        setSongs(data.tracks.items);
+      } catch (error) {
+        if (error.response && error.response.status === 401) {
+          // Access token expired, refresh it
+          refreshAccessToken();
+        } else {
+          console.error("Error fetching Amorphis songs:", error);
+        }
+      }
     };
 
     if (token) {
@@ -50,40 +79,7 @@ export default function Spotify() {
     }
   }, [token]);
 
-  const renderSongs = () => {
-    return songs.map((song) => (
-      <div
-        className="bg-gradient-to-r from-sky-800 to-sky-950 font-mono p-2 shadow shadow-yellow-50 rounded-lg mx-auto leading-8"
-        key={song.id}
-      >
-        <img
-          className="rounded"
-          src={song.album.images[0].url}
-          alt="Album Cover"
-        />
-        <p>
-          <strong>Song Name:</strong> {song.name}
-        </p>
-        <p>
-          <strong>Album:</strong> {song.album.name}
-        </p>
-        <p>
-          <strong>Artist:</strong>{" "}
-          {song.artists.map((artist) => artist.name).join(", ")}
-        </p>
-        <p>
-          <strong>Popularity:</strong> {song.popularity}
-        </p>
-        {song.preview_url && (
-          <audio controls className="mx-auto py-2">
-            <source src={song.preview_url} type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
-        )}
-        <hr />
-      </div>
-    ));
-  };
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -94,20 +90,18 @@ export default function Spotify() {
     >
       <div className=" text-vegasgold py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
         <h1 className="text-center pb-6">Amorphis Songs</h1>
-        {!token || tokenisExpired ? (
+        {!token ? (
           <a
             className="font-bold text-2xl border border-vegasgold p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
-            href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+            href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(AUTH_SCOPES)}`}
           >
             Login to Spotify
           </a>
         ) : (
           <h2>Welcome to Amorphis Songs</h2>
         )}
-        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-16 px-2 bg-gradient-to-r from-sky-800 to-sky-950">
-          {songs.length > 0 && renderSongs()}
+         <Songlist songs={songs}/>
         </div>
-      </div>
     </motion.div>
   );
 }
