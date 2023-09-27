@@ -80,12 +80,6 @@ export default function Spotify() {
     }
   }, [token]);
 
-  const redirectToSpotifyLogin = () => {
-    const AUTH_URL = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(AUTH_SCOPES)}`;
-    window.location.href = AUTH_URL;
-  }
-  
-
   
   return (
     <motion.div
@@ -97,10 +91,6 @@ export default function Spotify() {
     >
       <div className=" text-vegasgold py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
         <h1 className="text-center pb-6">Amorphis Songs</h1>
-        <button onClick={redirectToSpotifyLogin}>
-          Re-Authorize with Spotify
-          </button>
-
         {!token ? (
           <a
             className="font-bold text-2xl border border-vegasgold p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
