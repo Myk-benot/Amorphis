@@ -31,7 +31,7 @@ export default function Spotify() {
       window.localStorage.setItem("token", accessToken);
     }
 
-    setToken(token);
+    setToken(accessToken);
 
     const refreshAccessToken = async () => {
       const refreshToken = window.localStorage.getItem("refresh_token");
@@ -78,7 +78,7 @@ export default function Spotify() {
     if (accessToken) {
       searchAmorphisSongs();
     }
-  }, [token]);
+  }, []);
 
   
   return (
