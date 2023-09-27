@@ -31,7 +31,7 @@ export default function Spotify() {
       window.localStorage.setItem("token", accessToken);
     }
 
-    setToken(accessToken);
+    setToken(token);
 
     const refreshAccessToken = async () => {
       const refreshToken = window.localStorage.getItem("refresh_token");
