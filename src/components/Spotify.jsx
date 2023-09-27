@@ -11,7 +11,7 @@ const RESPONSE_TYPE = import.meta.env.VITE_REACT_APP_SPOTIFY_RESPONSE_TYPE;
 export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   const AUTH_SCOPES = 'user-modify-playback-state streaming user-read-email user-read-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state';
 
@@ -27,7 +27,7 @@ export default function Spotify() {
 
       if (accessToken) {
         window.localStorage.setItem("token", accessToken);
-        setIsLoggedIn(true);  
+      
       }
     }
 
