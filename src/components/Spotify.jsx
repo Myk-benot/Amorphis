@@ -11,6 +11,7 @@ const RESPONSE_TYPE = import.meta.env.VITE_REACT_APP_SPOTIFY_RESPONSE_TYPE;
 export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const AUTH_SCOPES = 'user-modify-playback-state streaming user-read-email user-read-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state';
 
@@ -26,6 +27,7 @@ export default function Spotify() {
 
       if (accessToken) {
         window.localStorage.setItem("token", accessToken);
+        setIsLoggedIn(true);  
       }
     }
 
@@ -38,7 +40,7 @@ export default function Spotify() {
             Authorization: `Bearer ${accessToken}`,
           },
           params: {
-            q: "Amorphis",
+            q: "artist:Amorphis",
             type: "track",
           },
         });
@@ -46,18 +48,19 @@ export default function Spotify() {
         setSongs(data.tracks.items);
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          // Redirect to login to refresh access token
-          window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(AUTH_SCOPES)}`;
+          if (!isLoggedIn) {
+            window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(AUTH_SCOPES)}`;
+          }
         } else {
           console.error("Error fetching Amorphis songs:", error);
         }
       }
     };
 
-    if (accessToken) {
+    if (accessToken && !isLoggedIn) {
       searchAmorphisSongs();
     }
-  }, []);
+  }, [isLoggedIn]);  
 
   return (
     <motion.div
