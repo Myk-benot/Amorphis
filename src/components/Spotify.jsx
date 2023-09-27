@@ -11,41 +11,25 @@ const RESPONSE_TYPE = import.meta.env.VITE_REACT_APP_SPOTIFY_RESPONSE_TYPE;
 export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
+
   const AUTH_SCOPES = 'user-modify-playback-state streaming user-read-email user-read-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state';
 
   useEffect(() => {
     const hash = window.location.hash;
     let accessToken = window.localStorage.getItem("token");
-    let refreshToken = window.localStorage.getItem("refresh_token");
 
     if (!accessToken && hash) {
       const hashParams = new URLSearchParams(hash.substring(1));
       accessToken = hashParams.get("access_token");
-      refreshToken = hashParams.get("refresh_token");
 
       window.location.hash = "";
 
       if (accessToken) {
         window.localStorage.setItem("token", accessToken);
       }
-
-      if (refreshToken) {
-        window.localStorage.setItem("refresh_token", refreshToken);
-      }
     }
 
     setToken(accessToken);
-
-    const refreshAccessToken = async () => {
-      try {
-        const response = await axios.get(`/refresh_token?refresh_token=${refreshToken}`);
-        const newAccessToken = response.data.access_token;
-        window.localStorage.setItem("token", newAccessToken);
-        setToken(newAccessToken);
-      } catch (error) {
-        console.error("Error refreshing access token:", error);
-      }
-    };
 
     const searchAmorphisSongs = async () => {
       try {
@@ -62,8 +46,8 @@ export default function Spotify() {
         setSongs(data.tracks.items);
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          // Access token expired, refresh it
-          refreshAccessToken();
+          // Redirect to login to refresh access token
+          window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(AUTH_SCOPES)}`;
         } else {
           console.error("Error fetching Amorphis songs:", error);
         }
