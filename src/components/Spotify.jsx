@@ -12,7 +12,6 @@ export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
 
-
   const AUTH_SCOPES = 'user-modify-playback-state streaming user-read-email user-read-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state';
 
   useEffect(() => {
@@ -27,7 +26,6 @@ export default function Spotify() {
 
       if (accessToken) {
         window.localStorage.setItem("token", accessToken);
-      
       }
     }
 
@@ -48,7 +46,7 @@ export default function Spotify() {
         setSongs(data.tracks.items);
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          if (!isLoggedIn) {
+          if (!accessToken) {
             window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(AUTH_SCOPES)}`;
           }
         } else {
@@ -57,10 +55,10 @@ export default function Spotify() {
       }
     };
 
-    if (accessToken && !isLoggedIn) {
+    if (accessToken && !token) {
       searchAmorphisSongs();
     }
-  }, [isLoggedIn]);  
+  }, [token, accessToken]);  
 
   return (
     <motion.div
