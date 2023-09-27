@@ -11,7 +11,7 @@ const RESPONSE_TYPE = import.meta.env.VITE_REACT_APP_SPOTIFY_RESPONSE_TYPE;
 export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
-  const AUTH_SCOPES = 'playlist-read-private';
+  const AUTH_SCOPES = 'user-modify-playback-state';
  
 
  
