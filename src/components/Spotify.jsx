@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import Songlist from "./Songs"
+import Songlist from "./Songs";
 
 const CLIENT_ID = import.meta.env.VITE_REACT_APP_SPOTIFY_CLIENT_ID;
 const REDIRECT_URI = import.meta.env.VITE_REACT_APP_SPOTIFY_REDIRECT_URI;
@@ -12,35 +12,31 @@ export default function Spotify() {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
   const AUTH_SCOPES = 'user-modify-playback-state streaming user-read-email user-read-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state';
- 
-
- 
 
   useEffect(() => {
     const hash = window.location.hash;
     let accessToken = window.localStorage.getItem("token");
+    let refreshToken = window.localStorage.getItem("refresh_token");
 
     if (!accessToken && hash) {
-      accessToken = hash
-        .substring(1)
-        .split("&")
-        .find((elem) => elem.startsWith("access_token"))
-        .split("=")[1];
+      const hashParams = new URLSearchParams(hash.substring(1));
+      accessToken = hashParams.get("access_token");
+      refreshToken = hashParams.get("refresh_token");
 
       window.location.hash = "";
-      window.localStorage.setItem("token", accessToken);
+
+      if (accessToken) {
+        window.localStorage.setItem("token", accessToken);
+      }
+
+      if (refreshToken) {
+        window.localStorage.setItem("refresh_token", refreshToken);
+      }
     }
 
     setToken(accessToken);
 
     const refreshAccessToken = async () => {
-      const refreshToken = window.localStorage.getItem("refresh_token");
-
-      if (!refreshToken) {
-        console.error("No refresh token available.");
-        return;
-      }
-
       try {
         const response = await axios.get(`/refresh_token?refresh_token=${refreshToken}`);
         const newAccessToken = response.data.access_token;
@@ -68,7 +64,6 @@ export default function Spotify() {
         if (error.response && error.response.status === 401) {
           // Access token expired, refresh it
           refreshAccessToken();
-         
         } else {
           console.error("Error fetching Amorphis songs:", error);
         }
@@ -80,7 +75,6 @@ export default function Spotify() {
     }
   }, []);
 
-  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -89,7 +83,7 @@ export default function Spotify() {
       transition={{ duration: 1.5 }}
       className="motion"
     >
-      <div className=" text-vegasgold py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
+      <div className="text-vegasgold py-16 bg-gradient-to-r from-sky-800 to-sky-950 h-screen text-center">
         <h1 className="text-center pb-6">Amorphis Songs</h1>
         {!token ? (
           <a
@@ -101,8 +95,8 @@ export default function Spotify() {
         ) : (
           <h2>Welcome to Amorphis Songs</h2>
         )}
-         <Songlist songs={songs}/>
-        </div>
+        <Songlist songs={songs} />
+      </div>
     </motion.div>
   );
 }
