@@ -55,7 +55,7 @@ export default function Spotify() {
       try {
         const { data } = await axios.get("https://api.spotify.com/v1/search", {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${accessToken}`,
           },
           params: {
             q: "Amorphis",
@@ -75,7 +75,7 @@ export default function Spotify() {
       }
     };
 
-    if (token) {
+    if (accessToken) {
       searchAmorphisSongs();
     }
   }, [token]);
