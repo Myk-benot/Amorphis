@@ -6,7 +6,7 @@ const SongList = ({ songs }) => {
       {songs.length > 0 &&
         songs.map((song) => (
           <div
-            className="bg-gradient-to-r from-sky-800 to-sky-950 font-mono flex flex-col justify-between p-2 shadow shadow-yellow-50 rounded-lg mx-auto leading-8"
+            className="bg-gradient-to-r from-sky-800 to-sky-950 font-mono flex flex-col justify-between p-2 shadow shadow-yellow-50 rounded-lg mx-auto leading-10"
             key={song.id}
           >
                <img

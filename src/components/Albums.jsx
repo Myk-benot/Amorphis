@@ -14,7 +14,7 @@ export default function Albums() {
       <img className="py-12 mx-auto" src="/amorphis-logo.png"/>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         {albums.map((album, index) => (
-          <div key={index} className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod leading-8 h-48 flex flex-col justify-between">
+          <div key={index} className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod leading-10 h-48 flex flex-col justify-btween">
             <p>
               {album.title}
               <br />
@@ -26,7 +26,7 @@ export default function Albums() {
                 <a
                   href={album.moreInfoLink}
                   target="_blank"
-                  className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800 mt-auto"
+                  className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800"
                 >
                   More Info
                 </a>
