@@ -13,6 +13,13 @@ export default function Spotify() {
   const [songs, setSongs] = useState([]);
 
   const AUTH_SCOPES = 'user-modify-playback-state streaming user-read-email user-read-private user-library-read user-library-modify user-read-playback-state user-modify-playback-state';
+  
+
+  const handleLogout = () => {
+    window.localStorage.removeItem("token");
+    setToken("");
+    window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(AUTH_SCOPES)}`;
+  };
 
   useEffect(() => {
     const searchAmorphisSongs = async (accessToken) => {
@@ -78,7 +85,15 @@ export default function Spotify() {
             Login to Spotify
           </a>
         ) : (
+          <div>
           <h2>Welcome to Amorphis Songs</h2>
+          <button
+          className="font-bold text-2xl border border-vegasgold p-4 rounded-lg hover:text-4xl hover:border-yellow-800"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+        </div>
         )}
         <Songlist songs={songs} />
       </div>
