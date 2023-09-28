@@ -26,7 +26,7 @@ export default function Albums() {
                 <a
                   href={album.moreInfoLink}
                   target="_blank"
-                  className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800 "
+                  className="border p-2 rounded-md bg-goldrod text-black hover:bg-vegasgold hover:border-yellow-800 mt-auto"
                 >
                   More Info
                 </a>
