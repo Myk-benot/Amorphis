@@ -86,7 +86,7 @@ export default function Spotify() {
           </a>
         ) : (
           <div>
-          <h2>Welcome to Amorphis Songs</h2>
+          <h2 className="pb-4">Welcome to Amorphis Songs</h2>
           <button
           className="font-bold text-2xl border border-vegasgold p-2 rounded-lg hover:text-4xl hover:border-yellow-800"
           onClick={handleLogout}
