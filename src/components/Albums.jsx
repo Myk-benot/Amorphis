@@ -14,7 +14,7 @@ export default function Albums() {
       <img className="py-12 mx-auto" src="/amorphis-logo.png"/>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         {albums.map((album, index) => (
-          <div key={index} className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod leading-8 h-48">
+          <div key={index} className="border border-vegasgold p-2 rounded-lg shadow shadow-goldrod leading-8 h-48 flex flex-col justify-between">
             <p>
               {album.title}
               <br />
